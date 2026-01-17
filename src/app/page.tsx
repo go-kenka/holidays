@@ -1,3 +1,5 @@
+'use client';
+
 import Calendar from '@/components/Calendar';
 import styles from './page.module.css';
 
@@ -58,6 +60,23 @@ export default function Home() {
       <footer className={styles.footer}>
         <p>© 2026 中国节假日 API | 基于 Next.js 构建</p>
       </footer>
+
+      {/* SEO Schema 结构化数据 */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "中国节假日查询",
+          "description": "免费查询中国法定节假日和调休安排信息",
+          "url": "https://holidays.docflow.top/",
+          "applicationCategory": "UtilitiesApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY"
+          }
+        })}
+      </script>
     </main>
   );
 }
